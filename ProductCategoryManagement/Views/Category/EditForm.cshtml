@@ -1,0 +1,81 @@
+﻿@model ProductCategoryManagement.Models.Category
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create New Category</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Edit Category</h2>
+
+    <form asp-action="SaveEdit" method="post" id="myForm">
+        <!-- Hidden input for Category ID -->
+        <input type="hidden" asp-for="CategoryId" />
+
+        <div class="form-group">
+            <!-- Label for Category Name with Bootstrap styling -->
+            <label asp-for="CategoryName" class="control-label">Category Name</label> <span id="error"><b>(*)</b></span>
+
+            <!-- Input field with Bootstrap styling -->
+            <input asp-for="CategoryName" class="form-control" id="category" />
+
+            <!-- Validation message placeholder with Bootstrap's text-danger class -->
+                <span asp-validation-for="CategoryName" id="errorcat" class="text-danger"></span>
+        </div>
+
+        <!-- Save and Cancel buttons with Bootstrap styling -->
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a asp-action="Index" class="btn btn-default">Cancel</a>
+    </form>
+</div>
+    <script>
+        $(document).ready(function () {
+
+            //category name validation
+            //allowing only aplhabets,numbers,spaces
+            $("#category").on("keypress", function (e) {
+                let category = $(this).val();
+                let keyCode = e.which;
+                if (
+                    !(keyCode >= 48 && keyCode <= 57) &&
+                    !(keyCode >= 65 && keyCode <= 90) &&
+                    !(keyCode >= 97 && keyCode <= 122) &&
+                    (keyCode != 32)
+                ) {
+                    e.preventDefault();
+                }
+            });
+
+            $("#category").on('input', function () {
+                const regex = /^[a-zA-Z0-9]+[a-zA-Z0-9 ]*$/;
+                const inputVal = $(this).val();
+
+                if (regex.test(inputVal)) {
+                    $("#error").css("color", "green");
+                    $("#errorcat").html("");
+                } else {
+                    $("#error").css("color", "red");
+                    $("#errorcat").html("this field is required").css("color", "red");
+                }
+            });
+            //on form submit to validate
+
+            $("#myForm").on('submit', function (e) {
+                const regex = /^[a-zA-Z0-9]+[a-zA-Z0-9 ]*$/;//regex
+                const inputVal = $("#category").val();
+
+                if (!regex.test(inputVal)) {
+                    e.preventDefault();
+                    $("#error").css("color", "red"); // Optional: for visual feedback
+                    $("#errorcat").html("This field is required").css("color", "red");
+                }
+            });
+
+        });
+    </script>
+    </body>
+    </html>

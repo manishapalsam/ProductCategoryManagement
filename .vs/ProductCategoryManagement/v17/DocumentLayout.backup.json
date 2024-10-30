@@ -1,0 +1,188 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|c:\\users\\vinay\\onedrive\\desktop\\machinetest_nimap\\productcategorymanagement\\productcategorymanagement\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|solutionrelative:productcategorymanagement\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|c:\\users\\vinay\\onedrive\\desktop\\machinetest_nimap\\productcategorymanagement\\productcategorymanagement\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|solutionrelative:productcategorymanagement\\models\\category.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|c:\\users\\vinay\\onedrive\\desktop\\machinetest_nimap\\productcategorymanagement\\productcategorymanagement\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|solutionrelative:productcategorymanagement\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|c:\\users\\vinay\\onedrive\\desktop\\machinetest_nimap\\productcategorymanagement\\productcategorymanagement\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|solutionrelative:productcategorymanagement\\controllers\\categorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|c:\\users\\vinay\\onedrive\\desktop\\machinetest_nimap\\productcategorymanagement\\productcategorymanagement\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|solutionrelative:productcategorymanagement\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|c:\\users\\vinay\\onedrive\\desktop\\machinetest_nimap\\productcategorymanagement\\productcategorymanagement\\views\\product\\viewlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|solutionrelative:productcategorymanagement\\views\\product\\viewlist.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|c:\\users\\vinay\\onedrive\\desktop\\machinetest_nimap\\productcategorymanagement\\productcategorymanagement\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|solutionrelative:productcategorymanagement\\views\\category\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|c:\\users\\vinay\\onedrive\\desktop\\machinetest_nimap\\productcategorymanagement\\productcategorymanagement\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|solutionrelative:productcategorymanagement\\views\\category\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|c:\\users\\vinay\\onedrive\\desktop\\machinetest_nimap\\productcategorymanagement\\productcategorymanagement\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|solutionrelative:productcategorymanagement\\views\\product\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|c:\\users\\vinay\\onedrive\\desktop\\machinetest_nimap\\productcategorymanagement\\productcategorymanagement\\views\\product\\editform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{9F49B07F-F5DE-42F7-8F1D-8FB04C9D2FF4}|ProductCategoryManagement\\ProductCategoryManagement.csproj|solutionrelative:productcategorymanagement\\views\\product\\editform.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "ProductCategoryManagement\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Models\\Product.cs",
+              "RelativeToolTip": "ProductCategoryManagement\\Models\\Product.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAUwA0AAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T16:31:36.45Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Category.cs",
+              "DocumentMoniker": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Models\\Category.cs",
+              "RelativeDocumentMoniker": "ProductCategoryManagement\\Models\\Category.cs",
+              "ToolTip": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Models\\Category.cs",
+              "RelativeToolTip": "ProductCategoryManagement\\Models\\Category.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T16:30:29.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Views\\Category\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProductCategoryManagement\\Views\\Category\\Index.cshtml",
+              "ToolTip": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Views\\Category\\Index.cshtml",
+              "RelativeToolTip": "ProductCategoryManagement\\Views\\Category\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T03:48:41.336Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ViewList.cshtml",
+              "DocumentMoniker": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Views\\Product\\ViewList.cshtml",
+              "RelativeDocumentMoniker": "ProductCategoryManagement\\Views\\Product\\ViewList.cshtml",
+              "ToolTip": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Views\\Product\\ViewList.cshtml",
+              "RelativeToolTip": "ProductCategoryManagement\\Views\\Product\\ViewList.cshtml",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAAC8AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T03:41:59.725Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProductCategoryManagement\\Views\\Product\\Index.cshtml",
+              "ToolTip": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "ProductCategoryManagement\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAowA8AAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T19:22:07.228Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Views\\Product\\Create.cshtml",
+              "RelativeDocumentMoniker": "ProductCategoryManagement\\Views\\Product\\Create.cshtml",
+              "ToolTip": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Views\\Product\\Create.cshtml",
+              "RelativeToolTip": "ProductCategoryManagement\\Views\\Product\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T18:10:48.961Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EditForm.cshtml",
+              "DocumentMoniker": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Views\\Product\\EditForm.cshtml",
+              "RelativeDocumentMoniker": "ProductCategoryManagement\\Views\\Product\\EditForm.cshtml",
+              "ToolTip": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Views\\Product\\EditForm.cshtml",
+              "RelativeToolTip": "ProductCategoryManagement\\Views\\Product\\EditForm.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-28T19:25:31.881Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoryController.cs",
+              "DocumentMoniker": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Controllers\\CategoryController.cs",
+              "RelativeDocumentMoniker": "ProductCategoryManagement\\Controllers\\CategoryController.cs",
+              "ToolTip": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Controllers\\CategoryController.cs",
+              "RelativeToolTip": "ProductCategoryManagement\\Controllers\\CategoryController.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAAAUAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T19:12:53.328Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "ProductCategoryManagement\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "ProductCategoryManagement\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAAAAALAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-28T19:00:14.208Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Views\\Category\\Create.cshtml",
+              "RelativeDocumentMoniker": "ProductCategoryManagement\\Views\\Category\\Create.cshtml",
+              "ToolTip": "C:\\Users\\vinay\\OneDrive\\Desktop\\MACHINETEST_NIMAP\\ProductCategoryManagement\\ProductCategoryManagement\\Views\\Category\\Create.cshtml",
+              "RelativeToolTip": "ProductCategoryManagement\\Views\\Category\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-28T18:34:52.474Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+﻿@model IEnumerable<ProductCategoryManagement.Models.Category>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Create New Category Button -->
+            <a asp-action="Create" class="btn btn-primary" style=" float: right;margin-top: 10px;">Create New Category</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12" style=" margin-top: 40px;">
+            <!-- Responsive Table with Bootstrap Classes -->
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Category Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var category in Model)
+                    {
+                        <tr>
+                            <td>@category.CategoryName</td>
+                            <td>
+                                <!-- Edit Form with Inline Button -->
+                                <form asp-action="Edit" method="post" style="display:inline;">
+                                    <input type="hidden" name="id" value="@category.CategoryId" />
+                                    <button type="submit" class="btn btn-primary">Edit</button>
+                                </form>
+                                |
+                                <!-- Delete Form with Inline Button -->
+                                <form asp-action="Delete" method="post" style="display:inline;">
+                                    <input type="hidden" name="id" value="@category.CategoryId" />
+                                    <button type="submit" class="btn btn-danger text-danger">Delete</button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+        @if (ViewBag.Msg != null)
+        {
+        <script>
+            window.onload = function () {
+                alert("@ViewBag.Msg");
+            };
+
+        </script>
+        }
+</body>
+</html>

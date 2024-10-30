@@ -1,0 +1,58 @@
+﻿@model ProductCategoryManagement.Models.ProductViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Product List</h2>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Category ID</th>
+                    <th>Category Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model.Products)
+                {
+                    <tr>
+                        <td>@product.ProductId</td>
+                        <td>@product.ProductName</td>
+                        <td>@product.CategoryId</td>
+                        <td>@product.Category?.CategoryName</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        <!-- Pagination Controls -->
+        <div class="text-center">
+            <span>Page @Model.CurrentPage of @Model.TotalPages</span>
+
+            <ul class="pagination">
+                @if (Model.CurrentPage > 1)
+                {
+                    <li>
+                        <a asp-action="ViewList" asp-route-page="@(Model.CurrentPage - 1)">Previous</a>
+                    </li>
+                }
+                @if (Model.CurrentPage < Model.TotalPages)
+                {
+                    <li>
+                        <a asp-action="ViewList" asp-route-page="@(Model.CurrentPage + 1)">Next</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+
+   </body>
+</html>

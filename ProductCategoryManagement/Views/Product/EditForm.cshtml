@@ -1,0 +1,91 @@
+﻿@model ProductCategoryManagement.Models.Product
+<!Doctype html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+</head>
+<body>
+    <h2>Edit Product</h2>
+
+    <form asp-action="SaveForm" method="post">
+        <input type="hidden" asp-for="ProductId" />
+
+        <div class="form-group">
+            <label asp-for="CategoryId">Category</label><span id="lblerror"><b>(*)</b></span>
+            <select asp-for="CategoryId" class="form-control" id="category" asp-items="@(new SelectList(ViewBag.Categories, "CategoryId", "CategoryName"))">
+                <option value="">Select Category</option>
+            </select>
+            <span asp-validation-for="CategoryId" class="text-danger" id="errorcat"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductName"></label><span id="error"><b>(*)</b></span>
+            <input asp-for="ProductName" class="form-control" id="product" />
+            <span asp-validation-for="ProductName" class="text-danger" id="errorpro"></span>
+        </div>
+
+
+        <button type="submit" class="btn btn-primary">Save</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
+
+    <script>
+        $(document).ready(function () {
+
+            //category name validation
+            //allowing only aplhabets,numbers,spaces
+            $("#product").on("keypress", function (e) {
+                let product = $(this).val();
+                let keyCode = e.which;
+                if (
+                    !(keyCode >= 48 && keyCode <= 57) &&
+                    !(keyCode >= 65 && keyCode <= 90) &&
+                    !(keyCode >= 97 && keyCode <= 122) &&
+                    (keyCode != 32)
+                ) {
+                    e.preventDefault();
+                }
+            });
+
+            $("#product").on('input', function () {
+                const regex = /^[a-zA-Z0-9]+[a-zA-Z0-9 ]*$/;
+                const inputVal = $(this).val();
+
+                if (regex.test(inputVal)) {
+                    $("#error").css("color", "green");
+                    $("#errorpro").html("");
+                } else {
+                    $("#error").css("color", "red");
+                    $("#errorpro").html("this field is required").css("color", "red");
+                }
+            });
+
+            //category validation
+            $('#category').on('change', function () {
+                if ($(this).val() == "") {
+                    $("#lblerror").css("color", "red");
+                    $("#errorcat").html('This field is required').css("color", "red");
+                } else {
+                    $("#lblerror").css("color", "green");
+                    $("#errorcat").html('');
+                }
+            });
+
+            //on form submit to validate
+            $("#myForm").on('submit', function (e) {
+                const regex = /^[a-zA-Z0-9]+[a-zA-Z0-9 ]*$/;//regex
+                const inputVal = $("#category").val();
+
+                if (!regex.test(inputVal)) {
+                    e.preventDefault();
+                    $("#error").css("color", "red"); // Optional: for visual feedback
+                    $("#errorpro").html("This field is required").css("color", "red");
+                }
+            });
+
+        });
+    </script>
+
+</body>
+</html>
