@@ -11,47 +11,55 @@
 </head>
 <body>
 <div class="container">
+   <h1>Category List</h1>
     <div class="row">
         <div class="col-md-12">
             <!-- Create New Category Button -->
             <a asp-action="Create" class="btn btn-primary" style=" float: right;margin-top: 10px;">Create New Category</a>
         </div>
     </div>
+        @if (ViewBag.Msg != null && ViewBag.Msg == "NO RECORDS FOUND")
+        {
+            <p>@ViewBag.Msg</p>
 
-    <div class="row">
-        <div class="col-md-12" style=" margin-top: 40px;">
-            <!-- Responsive Table with Bootstrap Classes -->
-            <table class="table table-bordered table-striped table-hover">
-                <thead>
-                    <tr>
-                        <th>Category Name</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var category in Model)
-                    {
-                        <tr>
-                            <td>@category.CategoryName</td>
-                            <td>
-                                <!-- Edit Form with Inline Button -->
-                                <form asp-action="Edit" method="post" style="display:inline;">
-                                    <input type="hidden" name="id" value="@category.CategoryId" />
-                                    <button type="submit" class="btn btn-primary">Edit</button>
-                                </form>
-                                |
-                                <!-- Delete Form with Inline Button -->
-                                <form asp-action="Delete" method="post" style="display:inline;">
-                                    <input type="hidden" name="id" value="@category.CategoryId" />
-                                    <button type="submit" class="btn btn-danger text-danger">Delete</button>
-                                </form>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
-    </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-md-12" style=" margin-top: 40px;">
+                    <!-- Responsive Table with Bootstrap Classes -->
+                    <table class="table table-bordered table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Category Name</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var category in Model)
+                            {
+                                <tr>
+                                    <td>@category.CategoryName</td>
+                                    <td>
+                                        <!-- Edit Form with Inline Button -->
+                                        <form asp-action="Edit" method="post" style="display:inline;">
+                                            <input type="hidden" name="id" value="@category.CategoryId" />
+                                            <button type="submit" class="btn btn-primary">Edit</button>
+                                        </form>
+                                        |
+                                        <!-- Delete Form with Inline Button -->
+                                        <form asp-action="Delete" method="post" style="display:inline;">
+                                            <input type="hidden" name="id" value="@category.CategoryId" />
+                                            <button type="submit" class="btn btn-danger text-danger">Delete</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        }
 </div>
 
         @if (ViewBag.Msg != null)

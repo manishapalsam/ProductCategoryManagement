@@ -4,13 +4,20 @@
 <html>
 <head>
     <title>Create New Category</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
+
 <body>
+    <h2>@(ViewBag.Create != null ? "Create Category" : "Edit Category")</h2>
 
     <div class="container">
-        <form asp-action="Create" method="post" id="myForm">
+        <form asp-action="@(ViewBag.Create != null ? "Create" : "SaveEdit")" method="post" id="myForm">
+            <input type="hidden" asp-for="CategoryId" />
+
             <div class="form-group" style="font-size: larger;">
                 <label asp-for="CategoryName" class="control-label" style="margin-top: 50px">CATEGORY NAME</label>
                 <span id="error"><b>(*)</b></span>
@@ -21,7 +28,7 @@
             </div>
 
             <div style="text-align:center; margin-top:40px">
-                <input type="submit" value="CREATE" class="btn btn-primary" style="font-size: x-large;border-radius: 10px" />
+                <input type="submit" value="@(ViewBag.Create != null ? "CREATE" : "EDIT")" class="btn btn-primary" style="font-size: x-large; border-radius: 10px" />
             </div>
         </form>
 
@@ -29,7 +36,6 @@
             <a asp-action="Index">Back to List</a>
         </div>
     </div>
-
 
 <script>
     $(document).ready(function () {

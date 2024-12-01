@@ -50,6 +50,10 @@ namespace ProductCategoryManagement.Controllers
             {
                 ViewBag.Msg = Msg;
                 var productList = db.Products.Include(p => p.Category).ToList();
+                if (productList.Count == 0) {
+                    ViewBag.Msg = "NO RECORDS FOUND";
+                    return View(productList);
+                }
                 return View(productList);
             }
             catch (Exception ex)
@@ -63,8 +67,11 @@ namespace ProductCategoryManagement.Controllers
         {
             try
             {
+                Product product = new Product();
                 ViewBag.Categories = db.Categories.ToList();
-                return View();
+                ViewBag.Create = "Create";
+
+                return View(product);
             }
             catch (Exception ex)
             {
@@ -85,6 +92,7 @@ namespace ProductCategoryManagement.Controllers
 
                     if (isDuplicate)
                     {
+                        ViewBag.Create = "Create";
                         ModelState.AddModelError("ProductName", "A product with the same name already exists in this category.");
                         ViewBag.Categories = db.Categories.ToList();
                         return View(product);
@@ -92,7 +100,7 @@ namespace ProductCategoryManagement.Controllers
 
                     db.Add(product);
                     db.SaveChanges();
-                    return RedirectToAction("Index", new { Msg = "Data Created" });
+                    return RedirectToAction("Index", new { Msg = "Data Created Successfully" });
                 }
 
                 ViewBag.Categories = db.Categories.ToList();
@@ -106,13 +114,16 @@ namespace ProductCategoryManagement.Controllers
 
         // Edit (GET)
         [HttpPost]
-        public IActionResult Edit(int id)
+        public IActionResult Edit(int? id)
         {
             try
             {
                 ViewBag.Categories = db.Categories.ToList();
                 var product = db.Products.FirstOrDefault(p => p.ProductId == id);
-                return View("EditForm", product);
+                if (product == null) {
+                    return RedirectToAction("Index",new { Msg = "Product Trying to edit does not exists"});
+                }
+                return View("Create", product);
             }
             catch (Exception ex)
             {
@@ -128,22 +139,42 @@ namespace ProductCategoryManagement.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    bool isDuplicate = db.Products.Any(p => p.CategoryId == product.CategoryId && p.ProductId != product.ProductId && p.ProductName == product.ProductName);
+                    // Retrieve the existing product from the database
+                    var existingProduct = db.Products.FirstOrDefault(p => p.ProductId == product.ProductId);
+
+                    if (existingProduct == null)
+                    {
+                        ViewBag.Msg = "Product trying to edit does not exist";
+                        ViewBag.Categories = db.Categories.ToList();
+                        return View("Create", product);
+                    }
+
+                    // Check for duplicate product name within the same category
+                    bool isDuplicate = db.Products.Any(p =>
+                        p.CategoryId == product.CategoryId &&
+                        p.ProductId != product.ProductId &&
+                        p.ProductName == product.ProductName);
 
                     if (isDuplicate)
                     {
                         ModelState.AddModelError("ProductName", "A product with the same name already exists in this category.");
                         ViewBag.Categories = db.Categories.ToList();
-                        return View(product);
+                        return View("Create", product);
                     }
 
-                    db.Products.Update(product);
+                    // Update fields of the existing entity
+                    existingProduct.ProductName = product.ProductName;
+                    existingProduct.CategoryId = product.CategoryId;
+                    // Add other fields as necessary...
+
+                    // Save changes
                     db.SaveChanges();
-                    return RedirectToAction("Index", new { Msg = "Data Edited" });
+
+                    return RedirectToAction("Index", new { Msg = "Data Edited Successfully" });
                 }
 
                 ViewBag.Categories = db.Categories.ToList();
-                return View(product);
+                return View("Create", product);
             }
             catch (Exception ex)
             {
@@ -151,9 +182,10 @@ namespace ProductCategoryManagement.Controllers
             }
         }
 
+
         // Delete
         [HttpPost]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
             try
             {
@@ -162,10 +194,10 @@ namespace ProductCategoryManagement.Controllers
                 {
                     db.Products.Remove(product);
                     db.SaveChanges();
-                    return RedirectToAction("Index", new { Msg = "Data Deleted" });
+                    return RedirectToAction("Index", new { Msg = "Data Deleted Successfully" });
                 }
 
-                return NotFound();
+                return RedirectToAction("Index", new { Msg = "Product trying to delete does not exists"});
             }
             catch (Exception ex)
             {

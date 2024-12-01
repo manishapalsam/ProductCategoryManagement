@@ -14,9 +14,21 @@ namespace ProductCategoryManagement.Controllers
         }
         public IActionResult Index(string Msg)
         {
-            ViewBag.Msg = Msg;
-            var Categories = db.Categories.ToList();
-            return View(Categories);
+            try {
+                ViewBag.Msg = Msg;
+                var Categories = db.Categories.ToList();
+
+                if (Categories.Count == 0) {
+                    ViewBag.Msg = "NO RECORDS FOUND";
+                    return View(Categories);
+                }
+                return View(Categories);
+            }
+            catch (Exception e)
+            {
+                throw new Exception("An Error occured while fetching Categories Data", e);
+            }
+
         }
 
 
@@ -24,8 +36,17 @@ namespace ProductCategoryManagement.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            try {
+                Category category = new Category();
+                ViewBag.Create = "Create";
+                return View(category);
+            }
+            catch (Exception e) {
+                throw new Exception("An Error occured while clicking Create Button",e);
+            }
+           
         }
+
         [HttpPost]
         public ActionResult Create(Category category)
         {
@@ -37,12 +58,13 @@ namespace ProductCategoryManagement.Controllers
 
                     if (duplicate != null)
                     {
+                        ViewBag.Create = "Create";
                         ModelState.AddModelError("CategoryName", "A category with this name already exists.");
                         return View(category);
                     }
                     db.Categories.Add(category);
                     db.SaveChanges();
-                    return RedirectToAction("Index", new {Msg = "Data Saved"});
+                    return RedirectToAction("Index", new {Msg = "Data Saved Successfully"});
                 }
             }
             catch (Exception ex)
@@ -53,7 +75,7 @@ namespace ProductCategoryManagement.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
             try
             {
@@ -61,14 +83,14 @@ namespace ProductCategoryManagement.Controllers
 
                 if (category != null)
                 {
-                    return View("EditForm", category);
+                    return View("Create", category);
                 }
+                return RedirectToAction("Index", new { Msg = "Category trying to edit does not exist" });
             }
             catch (Exception ex)
             {
                 throw new Exception("An error occurred while editing the category.", ex);
             }
-            return NotFound();
         }
 
         [HttpPost]
@@ -78,16 +100,22 @@ namespace ProductCategoryManagement.Controllers
             {
                 if (ModelState.IsValid)
                 {
+                    var c = db.Categories.Where(c => c.CategoryId  == category.CategoryId);
+                    if (c == null) {
+                        ViewBag.Msg = "Category to be edited  does not exist";
+                        return View("Create",category);
+                    }
+
                     bool isDuplicate = db.Categories.Any(c => c.CategoryName == category.CategoryName && c.CategoryId != category.CategoryId);
 
                     if (isDuplicate)
                     {
                         ModelState.AddModelError("CategoryName", "A category with this name already exists.");
-                        return View("EditForm", category);
+                        return View("Create", category);
                     }
                     db.Categories.Update(category);
                     db.SaveChanges();
-                    return RedirectToAction("Index", new { Msg = "Data Edited" });
+                    return RedirectToAction("Index", new { Msg = "Data Edited Successfully" });
                 }
             }
             catch (Exception ex)
@@ -98,7 +126,7 @@ namespace ProductCategoryManagement.Controllers
         }
 
         [HttpPost]
-        public ActionResult Delete(int id)
+        public ActionResult Delete(int? id)
         {
             try
             {
@@ -106,23 +134,27 @@ namespace ProductCategoryManagement.Controllers
 
                 if (category != null)
                 {
-                    var products = db.Products.Where(p => p.CategoryId == id).ToList();
+                    //var products = db.Products.Where(p => p.CategoryId == id).ToList();
+                    var products = db.Products.Any(p => p.CategoryId == id);
 
-                    if (products.Any())
+
+                    if (products)
                     {
-                        db.Products.RemoveRange(products);
+                        return RedirectToAction("Index",new { Msg = "First delete the product for particular category from product list"});
+                        //db.Products.RemoveRange(products);
                     }
 
                     db.Categories.Remove(category);
                     db.SaveChanges();
-                    return RedirectToAction("Index", new { Msg = "Data Deleted" });
+                    return RedirectToAction("Index", new { Msg = "Data Deleted Successfully" });
                 }
+
+                return RedirectToAction("Index", new { Msg = "Category to be deleted does not exists"});
             }
             catch (Exception ex)
             {
                 throw new Exception("An error occurred while deleting the category.", ex);
             }
-            return NotFound();
         }
 
 

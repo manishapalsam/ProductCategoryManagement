@@ -3,33 +3,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h2>Create Product</h2>
+    <h2>@(ViewBag.Create != null ? "Create Product" : "Edit Product")</h2>
 
-<form asp-action="Create" method="post">
-
-    <div class="form-group">
+    <form asp-action="@(ViewBag.Create != null ? "Create" : "SaveForm")" method="post">
+        <input type="hidden" asp-for="ProductId" />
+        <div class="form-group">
             <label asp-for="CategoryId">Category</label><span id="lblerror"><b>(*)</b></span>
-        <select asp-for="CategoryId" class="form-control" id="category" asp-items="@(new SelectList(ViewBag.Categories, "CategoryId", "CategoryName"))">
-            <option value="">Select Category</option>
-        </select>
-        <span asp-validation-for="CategoryId" class="text-danger" id="errorcat"></span>
-    </div>
-    <div class="form-group">
-            <label asp-for="ProductName" ></label><span id="error"><b>(*)</b></span>
-        <input asp-for="ProductName" class="form-control" id="product"/>
+            <select asp-for="CategoryId" class="form-control" id="category" asp-items="@(new SelectList(ViewBag.Categories, "CategoryId", "CategoryName"))">
+                <option value="">Select Category</option>
+            </select>
+            <span asp-validation-for="CategoryId" class="text-danger" id="errorcat"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="ProductName"></label><span id="error"><b>(*)</b></span>
+            <input asp-for="ProductName" class="form-control" id="product" />
             <span asp-validation-for="ProductName" class="text-danger" id="errorpro"></span>
-    </div>
+        </div>
 
-
-    <button type="submit" class="btn btn-primary">Save</button>
-    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
-</form>
-
-
+        <button type="submit" class="btn btn-primary">@(ViewBag.Create != null ? "CREATE" : "EDIT")</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </form>
     <script>
         $(document).ready(function () {
 

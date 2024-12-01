@@ -26,10 +26,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRGVsZXRlRm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/vinay/OneDrive/Desktop/MACHINETEST_NIMAP/ProductCategoryManagement/ProductCategoryManagement/Views/Category/EditForm.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcRWRpdEZvcm0uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/vinay/OneDrive/Desktop/MACHINETEST_NIMAP/ProductCategoryManagement/ProductCategoryManagement/Views/Category/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -44,10 +40,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/vinay/OneDrive/Desktop/MACHINETEST_NIMAP/ProductCategoryManagement/ProductCategoryManagement/Views/Product/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/vinay/OneDrive/Desktop/MACHINETEST_NIMAP/ProductCategoryManagement/ProductCategoryManagement/Views/Product/EditForm.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdFxFZGl0Rm9ybS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/vinay/OneDrive/Desktop/MACHINETEST_NIMAP/ProductCategoryManagement/ProductCategoryManagement/Views/Product/Index.cshtml]

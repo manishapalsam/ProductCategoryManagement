@@ -14,6 +14,7 @@ namespace ProductCategoryManagement.Models
         [Required(ErrorMessage = "Category Name is required.")]
         public int CategoryId { get; set; }
 
+        [ForeignKey("CategoryId")]
         public virtual Category? Category { get; set; }
     }
 }
